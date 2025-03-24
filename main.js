@@ -1,10 +1,15 @@
-async function pegaOsMano() {
+async function buscarUsuarios() {
     userText = document.getElementById('userText')
-    userText.innerHTML = 'Gabriel'
+    url = 'http://localhost:3000/users'
+    userText.innerHTML = 'Henrique'
 
-    url = 'http://127.0.0.1:3000/users'
 
+    // Exemplo 5 com Async/Await
     response = await fetch(url);
     data = await response.json()
     console.log('Fetch 5: ', data)
+
+    userText = document.getElementById('userText')
+    userText.innerHTML = data.users[1]
+    
 }
